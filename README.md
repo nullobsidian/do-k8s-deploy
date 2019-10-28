@@ -1,7 +1,7 @@
 # do-k8s-build
 Deploy and Manage Kubernetes on DigitalOcean
 
-Terraform Cloud - Backend Remote State 
+- Backend Remote State - Terraform Cloud
 
 ### Docker setup
 
