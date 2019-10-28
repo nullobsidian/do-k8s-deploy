@@ -56,7 +56,7 @@ chmod +x ./install.sh
 ./install.sh
 ```
 
-Connect to you K8s cluster
+Connect to your K8s cluster
 
 ```shell
 doctl kubernetes cluster kubeconfig save dev-33pr66s7-k8s-example-com
