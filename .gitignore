@@ -1,0 +1,7 @@
+do-k8s-iac/
+tf-backends/
+main.tf
+backend.tf
+terraform.tfvars
+terraform.auto.tfvars
+.terraform/
