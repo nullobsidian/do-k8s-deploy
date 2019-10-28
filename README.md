@@ -19,16 +19,6 @@ export DO_TOKEN=""
 # Terraform Cloud API Token
 export TF_TOKEN=""
 
-# Write to the environment
-echo -e "\nexport DIGITALOCEAN_ACCESS_TOKEN=\"${DO_TOKEN}\"" >> ~/.profile
-echo  -e "\ncredentials \"app.terraform.io\" {\n  token = \"${TF_TOKEN}\"\n}" >> ~/.terraformrc
-
-doctl auth init
-# Correct Output
-Using token [d021wefg6f7wddw1755c43adwb87acef425104050e95b77a1dddfeceb]
-
-Validating token... OK
-
 ```
 
 #### Step 2 - Edit your desired configuration in `config.ini`
