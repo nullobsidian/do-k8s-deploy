@@ -20,7 +20,7 @@ export DO_TOKEN=""
 export TF_TOKEN=""
 
 # Write to the environment
-echo -e "\nexport do_token=\"${DO_TOKEN}\"" >> ~/.profile
+echo -e "\nexport DIGITALOCEAN_ACCESS_TOKEN=\"${DO_TOKEN}\"" >> ~/.profile
 echo  -e "\ncredentials \"app.terraform.io\" {\n  token = \"${TF_TOKEN}\"\n}" >> ~/.terraformrc
 ```
 
