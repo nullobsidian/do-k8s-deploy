@@ -12,7 +12,7 @@ if [ ! -f backend.tf ]; then
     mv backends-tf/tf_cloud/backend.tf .
     sed -i 's/organization = ".*"/organization = "'"${tf_cloud_org}"'"/' backend.tf
     sed -i 's/\<name\> = ".*"/name = "'${tf_cloud_workspace}'"/' backend.tf
-    rm -rf tf-backends/
+    rm -rf backends-tf/
 fi
 
 if [ ! -f terraform.auto.tfvars ]; then
