@@ -1,6 +1,11 @@
 source config.ini
 
+echo -e "\nexport DIGITALOCEAN_ACCESS_TOKEN=\"${DO_TOKEN}\"" >> ~/.profile
+echo  -e "\ncredentials \"app.terraform.io\" {\n  token = \"${TF_TOKEN}\"\n}" >> ~/.terraformrc
+
 source ~/.profile
+
+doctl auth init
 
 if [ ! -f main.tf ]; then
     git clone https://github.com/sagebinary/do-k8s-tf.git
