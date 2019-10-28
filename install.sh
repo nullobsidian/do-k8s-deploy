@@ -1,7 +1,12 @@
 source config.ini
 
-echo -e "\nexport DIGITALOCEAN_ACCESS_TOKEN=\"${DO_TOKEN}\"" >> ~/.profile
-echo  -e "\ncredentials \"app.terraform.io\" {\n  token = \"${TF_TOKEN}\"\n}" >> ~/.terraformrc
+if grep -i "DIGITALOCEAN_ACCESS_TOKEN" ~/.profile; then
+    echo -e "\nexport DIGITALOCEAN_ACCESS_TOKEN=\"${DO_TOKEN}\"" >> ~/.profile
+fi    
+
+if grep -i "app.terraform.io" ~/.terraformrc; then
+    echo  -e "\ncredentials \"app.terraform.io\" {\n  token = \"${TF_TOKEN}\"\n}" >> ~/.terraformrc
+fi
 
 source ~/.profile
 
