@@ -16,8 +16,6 @@ if [ ! -f backend.tf ]; then
 fi
 
 if [ ! -f terraform.auto.tfvars ]; then
-    cat terraform.tfvars > config.ini
-    echo -e "\ndo_token=${do_token}" >> config.ini
     envsubst < config.ini > terraform.auto.tfvars
     sed -i '/tf_cloud_org=".*"/d' terraform.auto.tfvars
     sed -i '/tf_cloud_workspace=".*"/d' terraform.auto.tfvars
