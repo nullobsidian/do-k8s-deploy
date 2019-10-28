@@ -5,7 +5,6 @@ source ~/.profile
 if [ ! -f main.tf ]; then
     git clone https://github.com/sagebinary/do-k8s-tf.git
     mv do-k8s-tf/main.tf .
-    rm -rf do-k8s-iac/
 fi
 
 if [ ! -f backend.tf ]; then
@@ -17,9 +16,12 @@ if [ ! -f backend.tf ]; then
 fi
 
 if [ ! -f terraform.auto.tfvars ]; then
+    cat terraform.tfvars > config.ini
+    echo -e "\ndo_token=${do_token}" >> config.ini
     envsubst < config.ini > terraform.auto.tfvars
     sed -i '/tf_cloud_org=".*"/d' terraform.auto.tfvars
     sed -i '/tf_cloud_workspace=".*"/d' terraform.auto.tfvars
+    rm -rf do-k8s-tf/
 fi
 
 terraform init &> /dev/null
