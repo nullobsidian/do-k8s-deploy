@@ -8,7 +8,7 @@ if [ ! -f main.tf ]; then
 fi
 
 if [ ! -f backend.tf ]; then
-    git clone https://github.com/sagebinary/tf-backends.git
+    git clone https://github.com/sagebinary/backends-tf.git
     mv backends-tf/tf_cloud/backend.tf .
     sed -i 's/organization = ".*"/organization = "'"${tf_cloud_org}"'"/' backend.tf
     sed -i 's/\<name\> = ".*"/name = "'${tf_cloud_workspace}'"/' backend.tf
