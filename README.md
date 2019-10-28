@@ -20,8 +20,8 @@ export DO_TOKEN=""
 export TF_TOKEN=""
 
 # Write to the environment
-echo "export do_token=\"${DO_TOKEN}\"" >> ~/.profile
-echo  -e "credentials \"app.terraform.io\" {\n  token = \"${TF_TOKEN}\"\n}" >> ~/.terraformrc
+echo -e "\nexport do_token=\"${DO_TOKEN}\"" >> ~/.profile
+echo  -e "\ncredentials \"app.terraform.io\" {\n  token = \"${TF_TOKEN}\"\n}" >> ~/.terraformrc
 ```
 
 #### Step 2 - Edit your desired configuration in `config.ini`
